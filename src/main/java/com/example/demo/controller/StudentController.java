@@ -31,6 +31,13 @@ public class StudentController {
         return new Student (id,"Arya","Kadam");
     }
 
+    //Spring boot rest api with Request parameter
+    // http://localhost:8080/students/query?id=1&firstname=qwerty
+    @GetMapping("students/query")
+    public Student studentRequestVariable(@RequestParam int id,@RequestParam String firstname){
+        return new Student(id,firstname,"blaawds");
+    }
+
 
 
 }
