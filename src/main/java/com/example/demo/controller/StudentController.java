@@ -38,6 +38,17 @@ public class StudentController {
         return new Student(id,firstname,"blaawds");
     }
 
+    // Spring boot rest api that handles http post request
+    // @PostMapping and @RequestBody
+    @PostMapping("students/create")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Student createStudent(@RequestBody Student student){
+        System.out.println(student.getId());
+        System.out.println(student.getFirstname());
+        System.out.println(student.getLastname());
+        return student;
+    }
+
 
 
 }
